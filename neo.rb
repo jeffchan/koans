@@ -280,6 +280,7 @@ module Neo
       end
       print Color.green(']')
       print " #{pass_count}/#{total_tests}"
+      print " #{(pass_count / total_tests.to_f).round(2) * 100}%"
       puts
     end
 
