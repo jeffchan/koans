@@ -14,6 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a + b <= c or a + c <= b or b + c <= a
+    raise TriangleError.new("Invalid input")
+  end
   if a == b and b == c
     :equilateral
   elsif (a == b and b != c) or (a != b and b == c) or (a == c and b != c)
