@@ -129,6 +129,7 @@ Things that were noteworthy to me, as someone coming from JavaScript, Python, an
 - You can `map` over a file, ranges, etc (any collection)
 
 ### Blocks - should revisit this topic
+- See: https://reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
 - Use `yield` (without arguments) to take in a block/do-end
 - Use `yield` (with arguments) to pass argument to block/do-end
 - `block_given?` can be used to check if block is passed
