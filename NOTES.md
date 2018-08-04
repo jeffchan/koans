@@ -3,7 +3,7 @@
 Things that were noteworthy to me, as someone coming from JavaScript, Python, and PHP.
 
 ### Nil
-- `nil` is an Object\
+- `nil` is an Object
 - `nil.to_s` is empty string (makes sense!)
 - `nil.inspect` is `nil` (different than `to_s`, interesting)
 
