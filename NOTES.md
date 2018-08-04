@@ -2,6 +2,8 @@
 
 Things that were noteworthy to me, as someone coming from JavaScript, Python, and PHP.
 
+Good resource: http://hyperpolyglot.org/scripting
+
 ### Nil
 - `nil` is an Object
 - `nil.to_s` is empty string (makes sense!)
