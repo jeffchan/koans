@@ -156,6 +156,23 @@ end
 - Proc: You want to reuse a block of code multiple times.
 - Proc: Your method will have one or more callbacks.
 
+### Lambdas vs Procs
+- Lambdas are anonymous methods, where as Procs are drop in code snippets.
+- One key distinction is that `return` statements in `Proc`s override the calling method's return.
+- Unlike Procs, lambdas check the number of arguments passed
+- Use the `method()` method to convert a named method into something passable. Example:
+```
+def square(n)
+  n ** 2
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate!(method(:square))
+
+puts method(:square).class # => Method
+```
+
 ### Classes
 - `#instance_variables` gives you an array of the instance variable names
 - `attr_reader` for defining an accessor for instance variables (like a getter)
