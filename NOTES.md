@@ -130,12 +130,31 @@ Good resource: http://hyperpolyglot.org/scripting
 - `#inject` is like `#reduce` in JavaScript
 - You can `map` over a file, ranges, etc (any collection)
 
-### Blocks - should revisit this topic
+### Blocks
 - See: https://reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
+- A block is really just a Proc.
+- Main difference is a block is a Proc that cannot be saved
+- Why lowercase "block"? Because blocks do not have a class of their own (they are just Procs after all) and are just a type of syntax within Ruby.
 - Use `yield` (without arguments) to take in a block/do-end
 - Use `yield` (with arguments) to pass argument to block/do-end
 - `block_given?` can be used to check if block is passed
 - Create a lambda and you can use `lambda[arg]` to call on it (or `.call`) o.o
+- Use an ampersand to call a`Proc`. Example:
+```
+class Array
+  def iterate!(&code)
+    self.each_with_index do |n, i|
+      self[i] = code.call(n)
+    end
+  end
+end
+```
+#### When to use which?
+
+- Block: Your method is breaking an object down into smaller pieces, and you want to let your users interact with these pieces.
+- Block: You want to run multiple expressions atomically, like a database migration.
+- Proc: You want to reuse a block of code multiple times.
+- Proc: Your method will have one or more callbacks.
 
 ### Classes
 - `#instance_variables` gives you an array of the instance variable names
